@@ -1,0 +1,17 @@
+<h1><%= @header_msg %></h1>
+
+<ul>
+    <% @article.errors.full_messages.each do |error| %>
+        <li style="color: red;"><%= error %></li>
+    <% end %>
+</ul>
+
+<%= form_for(@article) do |f| %>
+ <label>Title: </label><br>
+ <%= f.text_field :title %><br><br>
+
+ <label>Description: </label><br>
+ <%= f.text_area :description %><br><br>
+
+ <%= f.submit @button_msg%>
+<% end %>
